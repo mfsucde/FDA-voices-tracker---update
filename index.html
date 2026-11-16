@@ -1,29 +1,47 @@
+### 📄 2. `index.html` (網頁主架構)
+*放置路徑：專案根目錄 `/index.html`*
+ 
+```html
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FDA Voices 摘要追蹤器</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FDA Voices 專家觀點摘要庫</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>FDA Voices 摘要追蹤器</h1>
-            <p>Insights from FDA leadership, summarized for quick reading.</p>
-        </div>
-    </header>
-
+<header class="site-header">
+<div class="container">
+<h1>FDA Voices 摘要庫</h1>
+<p>Insights from FDA leadership and experts, curated for quick reading.</p>
+</div>
+</header>
+ 
     <main class="container">
-        <div id="articles-container" class="grid">
-            <!-- JavaScript 會將 JSON 資料渲染在這裡 -->
-        </div>
-    </main>
-
-    <footer>
-        <p>本網站由 AI 輔助建立，內容摘要自美國 FDA 官方發布之 FDA Voices。</p>
-    </footer>
-
+<!-- 🔍 搜尋列區塊 -->
+<div class="search-wrapper">
+<input 
+                type="text" 
+                id="search-input" 
+                placeholder="搜尋標題、作者、核心摘要或關鍵字..." 
+                autocomplete="off"
+>
+<span id="search-count" class="search-count">資料讀取中...</span>
+</div>
+ 
+        <div id="loading" class="loading">資料載入中...</div>
+<div id="articles-container" class="grid-layout">
+<!-- 摘要卡片將由 JavaScript 動態生成於此 -->
+</div>
+</main>
+ 
+    <footer class="site-footer">
+<div class="container">
+<p>本專案由 AI 輔助開發 🤖 | 內容摘要自 <a href="https://www.fda.gov/news-events/fda-newsroom/fda-voices" target="_blank">FDA Voices 官方網站</a></p>
+</div>
+</footer>
+ 
     <script src="app.js"></script>
 </body>
 </html>
